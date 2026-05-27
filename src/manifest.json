@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Right Hand Tabs",
+  "version": "0.1.0",
+  "description": "Vertical tab management panel on the right side of Chrome.",
+  "permissions": ["tabs", "tabGroups", "sidePanel"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Right Hand Tabs"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
+  }
+}

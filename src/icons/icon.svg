@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- browser frame -->
+  <rect x="4" y="12" width="120" height="108" rx="8" fill="#e8eaed"/>
+  <!-- content area -->
+  <rect x="8" y="16" width="80" height="100" rx="4" fill="#fff"/>
+  <!-- right panel background -->
+  <rect x="92" y="16" width="28" height="100" rx="4" fill="#f1f3f4"/>
+  <!-- panel divider -->
+  <line x1="92" y1="16" x2="92" y2="116" stroke="#dadce0" stroke-width="1.5"/>
+  <!-- active tab (blue) -->
+  <rect x="96" y="24" width="20" height="16" rx="3" fill="#1a73e8"/>
+  <!-- inactive tabs -->
+  <rect x="96" y="46" width="20" height="16" rx="3" fill="#dadce0"/>
+  <rect x="96" y="68" width="20" height="16" rx="3" fill="#dadce0"/>
+  <rect x="96" y="90" width="20" height="16" rx="3" fill="#dadce0"/>
+  <!-- content squiggles -->
+  <rect x="14" y="28" width="60" height="6" rx="3" fill="#e8eaed"/>
+  <rect x="14" y="42" width="44" height="6" rx="3" fill="#e8eaed"/>
+  <rect x="14" y="56" width="52" height="6" rx="3" fill="#e8eaed"/>
+  <rect x="14" y="70" width="36" height="6" rx="3" fill="#e8eaed"/>
+</svg>
