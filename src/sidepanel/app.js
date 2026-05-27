@@ -107,6 +107,10 @@ function renderPinnedTab(tab) {
 
   el.appendChild(renderFavicon(tab));
   el.addEventListener('click', () => chrome.tabs.update(tab.id, { active: true }));
+  let middleDown = false;
+  el.addEventListener('mousedown',  e => { if (e.button === 1) { e.preventDefault(); middleDown = true; } });
+  el.addEventListener('mouseleave', () => { middleDown = false; });
+  el.addEventListener('mouseup',    e => { if (e.button === 1 && middleDown) { middleDown = false; chrome.tabs.remove(tab.id); } });
   el.addEventListener('contextmenu', e => showContextMenu(e, tab));
   bindDrag(el, tab);
   bindDrop(el, tab);
@@ -196,6 +200,7 @@ function renderGroupHeader(group, count) {
 function renderTabItem(tab, group) {
   const el = document.createElement('div');
   el.className = `tab-item${tab.active ? ' active' : ''}${group ? ' grouped' : ''}`;
+  el.title = tab.title || '';
   el.dataset.tabId = tab.id;
   el.draggable = true;
 
@@ -220,6 +225,10 @@ function renderTabItem(tab, group) {
   el.appendChild(closeBtn);
 
   el.addEventListener('click', () => chrome.tabs.update(tab.id, { active: true }));
+  let middleDown = false;
+  el.addEventListener('mousedown',  e => { if (e.button === 1) { e.preventDefault(); middleDown = true; } });
+  el.addEventListener('mouseleave', () => { middleDown = false; });
+  el.addEventListener('mouseup',    e => { if (e.button === 1 && middleDown) { middleDown = false; chrome.tabs.remove(tab.id); } });
   el.addEventListener('contextmenu', e => showContextMenu(e, tab));
   bindDrag(el, tab);
   bindDrop(el, tab);
@@ -529,4 +538,8 @@ function setupListeners() {
 document.addEventListener('DOMContentLoaded', async () => {
   setupListeners();
   await refresh();
+
+  chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
+    if (tab?.windowId) chrome.runtime.connect({ name: `panel-${tab.windowId}` });
+  });
 });

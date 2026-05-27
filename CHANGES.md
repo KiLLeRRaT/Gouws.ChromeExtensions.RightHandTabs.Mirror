@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — 2026-05-28
+
+### Added
+
+- Middle-click a tab to close it (press and release on the same tab; moving off before releasing cancels the action)
+- `Alt+T` keyboard shortcut to toggle the side panel open/closed
+
 ## 0.1.1 — 2026-05-27
 
 ### Fixed
