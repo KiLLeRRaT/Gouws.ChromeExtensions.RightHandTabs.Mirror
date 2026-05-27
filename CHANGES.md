@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — 2026-05-27
+
+### Fixed
+
+- New tab button now flows directly below the last tab instead of being pinned to the bottom of the panel
+- Active tab title no longer turns blue; text colour stays consistent with the rest of the list
+
 ## 0.1.0 — 2026-05-27
 
 Initial scaffold.

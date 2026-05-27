@@ -60,7 +60,6 @@ button {
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 /* ===================== Section Label ===================== */
@@ -141,7 +140,6 @@ button {
 .tab-item.active { background: var(--bg-active); }
 
 .tab-item.active .tab-title {
-  color: var(--accent);
   font-weight: 500;
 }
 
@@ -368,7 +366,6 @@ button {
   width: 100%;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
-  margin-top: auto;
   transition: background 0.12s, color 0.12s;
 }
 
