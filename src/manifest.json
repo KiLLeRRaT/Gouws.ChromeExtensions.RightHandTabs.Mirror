@@ -4,6 +4,12 @@
   "version": "0.1.1",
   "description": "Vertical tab management panel on the right side of Chrome.",
   "permissions": ["tabs", "tabGroups", "sidePanel"],
+  "commands": {
+    "toggle-panel": {
+      "suggested_key": { "default": "Alt+T" },
+      "description": "Toggle the Right Hand Tabs panel"
+    }
+  },
   "background": {
     "service_worker": "background.js"
   },
